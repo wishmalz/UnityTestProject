@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityTestProject.CSharp.Plugins", "UnityTestProject.CSharp.Plugins.csproj", "{BF62C46B-22B0-38CB-EADE-49EDC4B8EC56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityTestProject.CSharp", "UnityTestProject.CSharp.csproj", "{65986E7F-9119-F646-939D-78DEEE28A97B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityTestProject.CSharp.Editor", "UnityTestProject.CSharp.Editor.csproj", "{B287DC7D-7162-F496-1286-7B24B67D2FA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF62C46B-22B0-38CB-EADE-49EDC4B8EC56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF62C46B-22B0-38CB-EADE-49EDC4B8EC56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF62C46B-22B0-38CB-EADE-49EDC4B8EC56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF62C46B-22B0-38CB-EADE-49EDC4B8EC56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65986E7F-9119-F646-939D-78DEEE28A97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65986E7F-9119-F646-939D-78DEEE28A97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65986E7F-9119-F646-939D-78DEEE28A97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65986E7F-9119-F646-939D-78DEEE28A97B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B287DC7D-7162-F496-1286-7B24B67D2FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B287DC7D-7162-F496-1286-7B24B67D2FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B287DC7D-7162-F496-1286-7B24B67D2FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B287DC7D-7162-F496-1286-7B24B67D2FA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
