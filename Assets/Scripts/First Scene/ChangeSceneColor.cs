@@ -5,7 +5,7 @@ public class ChangeSceneColor : MonoBehaviour
 {
     public Color color1 = Color.red;
     public Color color2 = Color.blue;
-    public float duration = 3.0F;
+    public float duration = 2.0F;
 
     Camera camera;
 
