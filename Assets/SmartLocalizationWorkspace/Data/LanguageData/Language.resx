@@ -125,4 +125,7 @@
 	<data name="SmartLocalization.screenshot" xml:space="preserve">
 		<value>Screenshot</value>
 	</data>
+	<data name="SmartLocalization.sphere" xml:space="preserve">
+		<value>New Sphere</value>
+	</data>
 </root>

@@ -125,4 +125,7 @@
 	<data name="SmartLocalization.screenshot" xml:space="preserve">
 		<value>Скриншот</value>
 	</data>
+	<data name="SmartLocalization.sphere" xml:space="preserve">
+		<value>Новая сфера</value>
+	</data>
 </root>

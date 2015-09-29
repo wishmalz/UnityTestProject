@@ -15,7 +15,7 @@ public class CreateNewSphere : MonoBehaviour {
     public void addNewSphere()
     {
         // delete spheres if there are more then 10 of them on screen
-        if (listOfSpheres.Count > 10)
+        if (listOfSpheres.Count >= 10)
         {
             foreach (GameObject createdSphere in listOfSpheres)
             {

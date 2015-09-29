@@ -18,6 +18,7 @@ public class LoadAllLanguages : MonoBehaviour
 	private LanguageManager languageManager;
 	private Vector2 valuesScrollPosition = Vector2.zero;
 	private Vector2 languagesScrollPosition = Vector2.zero;
+    private byte languageSign = 0; // 0 - eng, 1 - rus
 
 	void Start () 
 	{
@@ -26,7 +27,7 @@ public class LoadAllLanguages : MonoBehaviour
 		SmartCultureInfo systemLanguage = languageManager.GetSupportedSystemLanguage();
 		if(systemLanguage != null)
 		{
-			languageManager.ChangeLanguage(systemLanguage);	
+            languageManager.ChangeLanguage(systemLanguage);	
 		}
 		
 		if(languageManager.NumberOfSupportedLanguages > 0)
@@ -58,17 +59,33 @@ public class LoadAllLanguages : MonoBehaviour
 	void OnGUI() 
 	{
 		if(languageManager.NumberOfSupportedLanguages > 0)
-		{			
-                Button nextSceneBtn = GameObject.Find("nextSceneBtn").GetComponent<Button>();
-                nextSceneBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.nextScene");
+		{
+                if (Application.loadedLevel == 0)
+                {
+                    Button nextSceneBtn = GameObject.Find("nextSceneBtn").GetComponent<Button>();
+                    nextSceneBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.nextScene");
 
-                Button screenshotBtn = GameObject.Find("screenshotBtn").GetComponent<Button>();
-                screenshotBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.screenshot");
+                    Button screenshotBtn = GameObject.Find("screenshotBtn").GetComponent<Button>();
+                    screenshotBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.screenshot");
 
-                Button colorBtn = GameObject.Find("colorBtn").GetComponent<Button>();
-                colorBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.color");
+                    Button colorBtn = GameObject.Find("colorBtn").GetComponent<Button>();
+                    colorBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.color");
+                }
+                
+                if (Application.loadedLevel == 1)
+                {
+                    Button nextSceneBtn = GameObject.Find("nextSceneBtn").GetComponent<Button>();
+                    nextSceneBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.nextScene");
 
-                languagesScrollPosition = GUILayout.BeginScrollView (languagesScrollPosition);
+                    Button screenshotBtn = GameObject.Find("screenshotBtn").GetComponent<Button>();
+                    screenshotBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.screenshot");
+
+                    Button newSphereBtn = GameObject.Find("newSphereBtn").GetComponent<Button>();
+                    newSphereBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.sphere");
+                }
+
+                
+languagesScrollPosition = GUILayout.BeginScrollView (languagesScrollPosition);
 			foreach(SmartCultureInfo language in availableLanguages)
 			{
 				if(GUILayout.Button(language.nativeName, GUILayout.Width(200)))
@@ -78,7 +95,7 @@ public class LoadAllLanguages : MonoBehaviour
 			}
 
 			GUILayout.EndScrollView();
-		}
+            }
 	}
 }
 }//namespace SmartLocalization
