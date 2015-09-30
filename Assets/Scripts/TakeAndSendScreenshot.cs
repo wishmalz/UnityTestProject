@@ -3,8 +3,11 @@ using System.Collections;
 using System.IO;
 using System;
 using System.Text;
+using Soomla.Profile;
+using Soomla;
 
 public class TakeAndSendScreenshot : MonoBehaviour {
+
     public void SaveScreenshot(Camera screenshotCamera)
     {
         System.IO.Directory.CreateDirectory("Screenshots");
@@ -68,7 +71,7 @@ public class TakeAndSendScreenshot : MonoBehaviour {
         changedImg.SetPixels(0, 0, imgToAppend.width, imgToAppend.height, imgToAppend.GetPixels());     // append custom img to new img
         changedImg.SetPixels(imgToAppend.width, 0, 14, 31, textToAppend.GetPixels(99, textToAppend.height-31, 14, 31));  // add a
         changedImg.SetPixels(imgToAppend.width + 14, 0, 14, 31, textToAppend.GetPixels(0, textToAppend.height - 31, 14, 31));   // add b
-        changedImg.SetPixels(imgToAppend.width + 14 * 2, 0, 14, 31, textToAppend.GetPixels(30, textToAppend.height - 31, 14, 31));   // add 1
+        changedImg.SetPixels(imgToAppend.width + 13 * 2, 0, 14, 31, textToAppend.GetPixels(30, textToAppend.height - 31, 14, 31));   // add 1
 
         return changedImg;
     }
