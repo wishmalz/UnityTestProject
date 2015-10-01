@@ -41,7 +41,11 @@ public class LoadAllLanguages : MonoBehaviour
 		}
 
 		LanguageManager.Instance.OnChangeLanguage += OnLanguageChanged;
-	}
+
+
+            if (LangChoise.languageCode == 1) languageManager.ChangeLanguage("ru-RU");
+            if (LangChoise.languageCode == 0) languageManager.ChangeLanguage("en-US");
+        }
 
 	void OnDestroy()
 	{
@@ -83,7 +87,7 @@ public class LoadAllLanguages : MonoBehaviour
                     Button newSphereBtn = GameObject.Find("newSphereBtn").GetComponent<Button>();
                     newSphereBtn.GetComponentInChildren<Text>().text = languageManager.GetTextValue("SmartLocalization.sphere");
                 }
-
+                
                 
 languagesScrollPosition = GUILayout.BeginScrollView (languagesScrollPosition);
 			foreach(SmartCultureInfo language in availableLanguages)
@@ -91,7 +95,9 @@ languagesScrollPosition = GUILayout.BeginScrollView (languagesScrollPosition);
 				if(GUILayout.Button(language.nativeName, GUILayout.Width(200)))
 				{
 					languageManager.ChangeLanguage(language);
-				}
+                        if (language.languageCode == "ru-RU") LangChoise.languageCode = 1;
+                        if (language.languageCode== "en-US") LangChoise.languageCode = 0;
+                    }
 			}
 
 			GUILayout.EndScrollView();
