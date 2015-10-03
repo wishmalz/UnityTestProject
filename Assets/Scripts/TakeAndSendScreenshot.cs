@@ -16,9 +16,7 @@ public class TakeAndSendScreenshot : MonoBehaviour {
 
     public void SaveScreenshot(Camera screenshotCamera)
     {
-        
-
-        System.IO.Directory.CreateDirectory("Screenshots");
+        //System.IO.Directory.CreateDirectory("Screenshots");
         string saveToFileName = "Screenshots//Screenshot" + ".png";//+ DateTime.Now.ToString(" yyyy-MM-dd-HH-mm-ss-fff") + ".png";
         Texture2D screenshot = TakeScreenshot(Screen.width, Screen.height, screenshotCamera);
         if (screenshot != null && saveToFileName != null)
@@ -32,11 +30,11 @@ public class TakeAndSendScreenshot : MonoBehaviour {
                 if (saveToFileName.ToLower().EndsWith(".jpg"))
                     bytes = screenshot.EncodeToJPG();
                 else bytes = screenshot.EncodeToPNG();
-                FileStream fs = new FileStream(saveToFileName, FileMode.OpenOrCreate);
+                /*FileStream fs = new FileStream(saveToFileName, FileMode.OpenOrCreate);
                 BinaryWriter ww = new BinaryWriter(fs);
                 ww.Write(bytes);
                 ww.Close();
-                fs.Close();
+                fs.Close();*/
             }
 
             if (!isProcessing)
