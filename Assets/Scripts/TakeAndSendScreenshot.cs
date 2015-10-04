@@ -5,6 +5,7 @@ using System;
 using System.Text;
 using Soomla.Profile;
 using Soomla;
+using UnityEngine.UI;
 
 public class TakeAndSendScreenshot : MonoBehaviour {
 
@@ -16,26 +17,15 @@ public class TakeAndSendScreenshot : MonoBehaviour {
 
     public void SaveScreenshot(Camera screenshotCamera)
     {
-        //System.IO.Directory.CreateDirectory("Screenshots");
-        string saveToFileName = "Screenshots//Screenshot" + ".png";//+ DateTime.Now.ToString(" yyyy-MM-dd-HH-mm-ss-fff") + ".png";
+        string saveToFileName = "Screenshots//Screenshot.png";
         Texture2D screenshot = TakeScreenshot(Screen.width, Screen.height, screenshotCamera);
         if (screenshot != null && saveToFileName != null)
         {
             byte[] bytes = null;
-            if (Application.platform == RuntimePlatform.OSXPlayer ||
-            Application.platform == RuntimePlatform.WindowsPlayer &&
-            Application.platform != RuntimePlatform.LinuxPlayer
-            || Application.isEditor)
-            {
-                if (saveToFileName.ToLower().EndsWith(".jpg"))
-                    bytes = screenshot.EncodeToJPG();
-                else bytes = screenshot.EncodeToPNG();
-                /*FileStream fs = new FileStream(saveToFileName, FileMode.OpenOrCreate);
-                BinaryWriter ww = new BinaryWriter(fs);
-                ww.Write(bytes);
-                ww.Close();
-                fs.Close();*/
-            }
+            
+            if (saveToFileName.ToLower().EndsWith(".jpg"))
+                bytes = screenshot.EncodeToJPG();
+            else bytes = screenshot.EncodeToPNG();
 
             if (!isProcessing)
                 StartCoroutine(ShareScreenshot(bytes));
@@ -88,20 +78,19 @@ public class TakeAndSendScreenshot : MonoBehaviour {
     private IEnumerator ShareScreenshot(byte[] screenshot)
     {
         isProcessing = true;
-        yield return new WaitForEndOfFrame();
 
-        Texture2D screenTexture = new Texture2D(1080, 1080, TextureFormat.RGB24, true);
-        screenTexture.Apply();
+        byte[] dataToSave = new byte [screenshot.Length];
+        Array.Copy(screenshot, dataToSave, screenshot.Length);
 
-        byte[] dataToSave = screenshot;
-
-        string destination = Path.Combine(Application.persistentDataPath, System.DateTime.Now.ToString("yyyy-MM-dd-HHmmss") + ".png");
-        Debug.Log(destination);
-        File.WriteAllBytes(destination, dataToSave);
-
-        if (!Application.isEditor)
-        {
-            AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
+        string destination = Path.Combine(Application.persistentDataPath, "Screenshot.png");
+        FileStream fs = new FileStream(destination, FileMode.OpenOrCreate);
+        BinaryWriter ww = new BinaryWriter(fs);
+        ww.Write(screenshot);
+        ww.Close();
+        fs.Close();
+        Debug.Log("WRITE IMAGE TO DISK");
+        GameObject.Find("pathText").GetComponent<Text>().text = "File is on disk";
+        AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
             AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
             intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string> ("ACTION_SEND"));
             AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
@@ -109,15 +98,17 @@ public class TakeAndSendScreenshot : MonoBehaviour {
             intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uriObject);
             intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), shareText + gameLink);
             intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), subject);
-            intentObject.Call<AndroidJavaObject>("setType", "image/jpeg");
+            intentObject.Call<AndroidJavaObject>("setType", "image/png");
             AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
 
             currentActivity.Call("startActivity", intentObject);
-
-        }
+        Debug.Log("activity started");
+        GameObject.Find("pathText").GetComponent<Text>().text = "Activity";
 
         isProcessing = false;
+
+        yield return new WaitForSeconds(1);
 
     }
 }
