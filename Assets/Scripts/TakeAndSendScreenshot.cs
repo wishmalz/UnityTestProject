@@ -14,11 +14,19 @@ public class TakeAndSendScreenshot : MonoBehaviour {
     private string subject = "Rebus Guess The Movie Duck Type";
     private string imageName = "Screenshot"; // without the extension, for iinstance, MyPic 
     private bool isProcessing = false;
+    private ShareScreenshotInterface shareImg;
 
     public void SaveScreenshot(Camera screenshotCamera)
     {
         string saveToFileName = "Screenshots//Screenshot.png";
         Texture2D screenshot = TakeScreenshot(Screen.width, Screen.height, screenshotCamera);
+
+        // choose object type based on platform
+        if (Application.platform == RuntimePlatform.Android)
+            shareImg = new ShareScreenshotAndroid();
+        else
+            shareImg = new ShareScreenshotAndroid();
+
         if (screenshot != null && saveToFileName != null)
         {
             byte[] bytes = null;
@@ -27,8 +35,9 @@ public class TakeAndSendScreenshot : MonoBehaviour {
                 bytes = screenshot.EncodeToJPG();
             else bytes = screenshot.EncodeToPNG();
 
+            // share screenshot
             if (!isProcessing)
-                StartCoroutine(ShareScreenshot(bytes));
+                StartCoroutine(shareImg.ShareScreenshot(bytes, isProcessing, shareText, gameLink, subject, imageName));
         }
     }
 
@@ -109,6 +118,5 @@ public class TakeAndSendScreenshot : MonoBehaviour {
         isProcessing = false;
 
         yield return new WaitForSeconds(1);
-
     }
 }

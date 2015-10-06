@@ -51,17 +51,11 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -90,9 +84,11 @@
     <Compile Include="Assets\Examples\MuffinRush\ExampleWindow.cs" />
     <Compile Include="Assets\Scripts\First Scene\ChangeSceneColor.cs" />
     <Compile Include="Assets\Scripts\LangChoise.cs" />
-    <Compile Include="Assets\Scripts\LoadNewSceneOnClick.cs" />
+    <Compile Include="Assets\Scripts\LoadNewScene.cs" />
     <Compile Include="Assets\Scripts\PlaySound.cs" />
     <Compile Include="Assets\Scripts\Second Scene\CreateNewSphere.cs" />
+    <Compile Include="Assets\Scripts\ShareScreenshotAndroid.cs" />
+    <Compile Include="Assets\Scripts\ShareScreenshotInterface.cs" />
     <Compile Include="Assets\Scripts\TakeAndSendScreenshot.cs" />
     <Compile Include="Assets\SmartLocalization\Examples\LoadAllLanguages.cs" />
     <Compile Include="Assets\SmartLocalization\Scripts\NGUI\SL_NGUILabel.cs" />
