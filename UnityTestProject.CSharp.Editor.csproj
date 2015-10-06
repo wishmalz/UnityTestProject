@@ -111,9 +111,6 @@
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
-    <Reference Include="soomla-wp-core">
-      <HintPath>Assets\Plugins\soomla-wp-core.dll</HintPath>
-    </Reference>
     <Reference Include="SmartLocalization_Runtime">
       <HintPath>Assets\SmartLocalization\SmartLocalization_Runtime.dll</HintPath>
     </Reference>

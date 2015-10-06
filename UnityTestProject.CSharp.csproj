@@ -66,9 +66,6 @@
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
-    <Reference Include="soomla-wp-core">
-      <HintPath>Assets\Plugins\soomla-wp-core.dll</HintPath>
-    </Reference>
     <Reference Include="SmartLocalization_Runtime">
       <HintPath>Assets\SmartLocalization\SmartLocalization_Runtime.dll</HintPath>
     </Reference>
@@ -80,8 +77,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Examples\MuffinRush\Example.cs" />
-    <Compile Include="Assets\Examples\MuffinRush\ExampleWindow.cs" />
     <Compile Include="Assets\Scripts\First Scene\ChangeSceneColor.cs" />
     <Compile Include="Assets\Scripts\LangChoise.cs" />
     <Compile Include="Assets\Scripts\LoadNewScene.cs" />
@@ -90,6 +85,7 @@
     <Compile Include="Assets\Scripts\ShareScreenshotAndroid.cs" />
     <Compile Include="Assets\Scripts\ShareScreenshotInterface.cs" />
     <Compile Include="Assets\Scripts\TakeAndSendScreenshot.cs" />
+    <Compile Include="Assets\Scripts\TextureLoader.cs" />
     <Compile Include="Assets\SmartLocalization\Examples\LoadAllLanguages.cs" />
     <Compile Include="Assets\SmartLocalization\Scripts\NGUI\SL_NGUILabel.cs" />
     <Compile Include="Assets\SmartLocalization\Scripts\NGUI\SL_NGUISpriteAtlas.cs" />

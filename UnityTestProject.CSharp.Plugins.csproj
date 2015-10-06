@@ -66,67 +66,11 @@
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
-    <Reference Include="soomla-wp-core">
-      <HintPath>Assets\Plugins\soomla-wp-core.dll</HintPath>
-    </Reference>
     <Reference Include="SmartLocalization_Runtime">
       <HintPath>Assets\SmartLocalization\SmartLocalization_Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\Soomla\Core\AndroidImpl\KeyValueStorageAndroid.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\AndroidImpl\RewardStorageAndroid.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\CoreSettings.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\ISoomlaPostBuildTool.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\ISoomlaSettings.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\ObjectDictionary.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\SoomlaEditorScript.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\SoomlaPostBuildTools.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\UnityDictionary.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\android\ISoomlaManifestTools.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\android\SoomlaAndroidUtil.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Config\android\SoomlaManifestTools.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\CoreEvents.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\IOSImpl\KeyValueStorageIOS.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\IOSImpl\RewardStorageIOS.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\JSONObject.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\NullCheckable.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\Schedule.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\SoomlaEntity.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\SoomlaExtensions.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\SoomlaUtils.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\WPImpl\KeyValueStorageWP.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\WPImpl\RewardStorageWP.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\data\JSONConsts.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\data\KeyValueStorage.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\data\RewardStorage.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\rewards\BadgeReward.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\rewards\RandomReward.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\rewards\Reward.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Core\rewards\SequenceReward.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\AndroidImpl\ProfileEventPusherAndroid.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\AndroidImpl\ProfileJNIHandler.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\AndroidImpl\SoomlaProfileAndroid.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\Config\ProfileManifestTools.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\Config\ProfilePostBuildTool.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\Config\ProfileSettings.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\Domain\PJSONConsts.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\Domain\Provider.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\Domain\SocialActionType.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\Domain\UserProfile.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\IOSImpl\IOS_ProfileErrorCodes.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\IOSImpl\ProfileEventPusherIOS.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\IOSImpl\SoomlaProfileIOS.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\ProfileEvents.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\ProfilePayload.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\SocialPageData.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\SoomlaProfile.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\exceptions\ProviderNotFoundException.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\exceptions\UserProfileNotFoundException.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\social-providers\FBSocialProvider.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\social-providers\GPSocialProvider.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\social-providers\SocialProvider.cs" />
-    <Compile Include="Assets\Plugins\Soomla\Profile\social-providers\TwitterSocialProvider.cs" />
     <Compile Include="Assets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
