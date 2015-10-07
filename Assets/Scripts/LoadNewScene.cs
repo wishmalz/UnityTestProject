@@ -16,7 +16,7 @@ public class LoadNewScene : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(audioSource.clip);
-        yield return new WaitForSeconds(audioSource.clip.length - (float)1.65);  // 1.65 length of silence in sound clip
+        yield return new WaitForSeconds(audioSource.clip.length - (float)1.63);  // 1.63 length of silence in sound clip
 
         Application.LoadLevel(scene);
     }

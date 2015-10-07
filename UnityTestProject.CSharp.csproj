@@ -80,10 +80,10 @@
     <Compile Include="Assets\Scripts\First Scene\ChangeSceneColor.cs" />
     <Compile Include="Assets\Scripts\LangChoise.cs" />
     <Compile Include="Assets\Scripts\LoadNewScene.cs" />
-    <Compile Include="Assets\Scripts\PlaySound.cs" />
     <Compile Include="Assets\Scripts\Second Scene\CreateNewSphere.cs" />
     <Compile Include="Assets\Scripts\ShareScreenshotAndroid.cs" />
     <Compile Include="Assets\Scripts\ShareScreenshotInterface.cs" />
+    <Compile Include="Assets\Scripts\SoundControl.cs" />
     <Compile Include="Assets\Scripts\TakeAndSendScreenshot.cs" />
     <Compile Include="Assets\Scripts\TextureLoader.cs" />
     <Compile Include="Assets\SmartLocalization\Examples\LoadAllLanguages.cs" />
