@@ -5,14 +5,11 @@ using System.IO;
 
 public class ShareScreenshotAndroid : ShareScreenshotInterface
 {
-    IEnumerator ShareScreenshotInterface.ShareScreenshot(byte[] screenshot, bool isProcessing, string shareText, string gameLink, string subject, string imageName)
+    IEnumerator ShareScreenshotInterface.ShareScreenshot(byte[] screenshot, bool isProcessing, string shareText, string gameLink, string subject)
     {
         isProcessing = true;
 
-        byte[] dataToSave = new byte[screenshot.Length];
-        Array.Copy(screenshot, dataToSave, screenshot.Length);
-
-        string destination = Path.Combine(Application.persistentDataPath, imageName + ".png");
+        string destination = Path.Combine(Application.persistentDataPath, "Screenshot.png");
         FileStream fs = new FileStream(destination, FileMode.OpenOrCreate);
         BinaryWriter ww = new BinaryWriter(fs);
         ww.Write(screenshot);

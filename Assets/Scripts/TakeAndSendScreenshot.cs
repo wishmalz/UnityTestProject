@@ -7,10 +7,9 @@ using UnityEngine.UI;
 
 public class TakeAndSendScreenshot : MonoBehaviour {
 
-    private string shareText = "Ezample text!\n";
+    private string shareText = "Example text!\n";
     private string gameLink = "Download the game on play store at " + "\nhttps://play.google.com/store/apps/details?id=com.TGC.guessthemovie&pcampaignid=GPC_shareGame";
     private string subject = "Rebus Guess The Movie Duck Type";
-    private string imageName = "Screenshot"; // without the extension, for iinstance, MyPic 
     private bool isProcessing = false;
     private ShareScreenshotInterface shareImg;
 
@@ -35,7 +34,7 @@ public class TakeAndSendScreenshot : MonoBehaviour {
 
             // share screenshot
             if (!isProcessing)
-                StartCoroutine(shareImg.ShareScreenshot(bytes, isProcessing, shareText, gameLink, subject, imageName));
+                StartCoroutine(shareImg.ShareScreenshot(bytes, isProcessing, shareText, gameLink, subject));
         }
     }
 
@@ -72,7 +71,7 @@ public class TakeAndSendScreenshot : MonoBehaviour {
         newImgHeight = screenshot.height + imgToAppend.height;
         newImgWidth = screenshot.width;
 
-        changedImg = TextureLoader.MakeTexture(newImgWidth, newImgHeight);//new Texture2D(newImgWidth, newImgHeight);
+        changedImg = new Texture2D(newImgWidth, newImgHeight);
         changedImg.SetPixels(0, changedImg.height - screenshot.height, screenshot.width, screenshot.height, screenshot.GetPixels());    // append sceenshot to new img
         changedImg.SetPixels(0, 0, imgToAppend.width, imgToAppend.height, imgToAppend.GetPixels());     // append custom img to new img
         changedImg.SetPixels(imgToAppend.width, 0, 14, 31, textToAppend.GetPixels(107, textToAppend.height-31, 14, 31));  // add a

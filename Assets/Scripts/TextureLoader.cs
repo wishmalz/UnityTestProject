@@ -10,11 +10,4 @@ public static class TextureLoader{
         return texture;
     }
 
-    public static Texture2D MakeTexture(int newImgWidth, int newImgHeight)
-    {
-        Texture2D texture = new Texture2D(newImgWidth, newImgWidth);
-
-        return texture;
-    }
-
 }
